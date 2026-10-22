@@ -1,12 +1,14 @@
 // Portada del DEMO: accesos a cada módulo. En producción el cliente entra directo por /m/<token> desde el QR.
 import { router, type Href } from 'expo-router';
-import { ChefHat, ChevronRight, LayoutGrid, Palette, QrCode, Users, type LucideIcon } from 'lucide-react-native';
+import { ChefHat, ChevronRight, LayoutGrid, Palette, QrCode, RotateCcw, Users, type LucideIcon } from 'lucide-react-native';
 import { Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
 
 import { FotoBanner, Logo, Tejido } from '@/components/decor';
-import { Aviso, Pantalla, Texto, Titulo } from '@/components/ui';
+import { Aviso, Boton, Pantalla, Texto, Titulo } from '@/components/ui';
 import { Colores, Espacio, Fuentes, Radio, Tinte } from '@/constants/theme';
+import { reiniciarDemo } from '@/demo/servidor-local';
+import { MODO_DEMO } from '@/lib/api';
 
 const MESA_DEMO = 'demo-m4-t5n1';
 
@@ -38,6 +40,14 @@ export default function Portada() {
       </View>
 
       <Aviso tipo="alerta">Demo con platillos y precios de ejemplo. No es el catálogo real ni la versión aprobada (Fase B pendiente).</Aviso>
+      {MODO_DEMO ? (
+        <>
+          <Aviso tipo="info">
+            Modo demo sin servidor: los pedidos se guardan en este navegador. Abre la cocina en otra pestaña para verlos llegar en tiempo real.
+          </Aviso>
+          <Boton titulo="Reiniciar demo (borrar pedidos)" variante="secundario" Icono={RotateCcw} onPress={reiniciarDemo} />
+        </>
+      ) : null}
 
       <Titulo nivel={2}>Cliente (celular)</Titulo>
       <Acceso href={`/m/${MESA_DEMO}`} Icono={QrCode} titulo="Escanear QR de la Mesa M4" detalle="Menú, platillo, carrito, envío y seguimiento" color={Tinte.anil} />

@@ -1,9 +1,22 @@
 import { Platform } from 'react-native';
 
 import type { EstadoOrden } from '@/constants/theme';
+import { apiDemo, ErrorDemo, suscribirDemo } from '@/demo/servidor-local';
 
 const URL_LOCAL = Platform.OS === 'android' ? 'http://10.0.2.2:4000' : 'http://localhost:4000';
 export const API_URL = (process.env.EXPO_PUBLIC_API_URL || URL_LOCAL).replace(/\/$/, '');
+
+/**
+ * Interruptor de modo demo (sin servidor): el API se simula en el navegador.
+ * - EXPO_PUBLIC_MODO=demo → siempre demo · EXPO_PUBLIC_MODO=api → siempre API real.
+ * - Sin configurar: demo si no hay EXPO_PUBLIC_API_URL y la web no corre en la red local (p. ej. Vercel).
+ */
+const MODO = process.env.EXPO_PUBLIC_MODO;
+const enRedLocal =
+  Platform.OS !== 'web' ||
+  typeof window === 'undefined' ||
+  /^(localhost|127\.|10\.|192\.168\.|172\.(1[6-9]|2\d|3[01])\.)/.test(window.location.hostname);
+export const MODO_DEMO = MODO === 'demo' || (MODO !== 'api' && !process.env.EXPO_PUBLIC_API_URL && !enRedLocal);
 
 const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL?.replace(/\/$/, '');
 const BUCKET = process.env.EXPO_PUBLIC_SUPABASE_BUCKET || 'platillos';
@@ -67,6 +80,14 @@ export class ErrorApi extends Error {
 }
 
 export async function api<T>(ruta: string, opciones: { method?: string; body?: unknown; token?: string | null } = {}): Promise<T> {
+  if (MODO_DEMO) {
+    try {
+      return (await apiDemo(ruta, opciones.method || 'GET', opciones.body as Record<string, unknown>, opciones.token)) as T;
+    } catch (e) {
+      if (e instanceof ErrorDemo) throw new ErrorApi(e.status, e.message, e.datos);
+      throw e;
+    }
+  }
   let res: Response;
   try {
     res = await fetch(`${API_URL}/api${ruta}`, {
@@ -111,6 +132,18 @@ export function suscribir(
 ): () => void {
   const inicio = setTimeout(() => alEvento('inicio', null), 0);
   const respaldo = setInterval(() => alEvento('sondeo', null), opciones.respaldoMs ?? 15000);
+  if (MODO_DEMO) {
+    // Canal equivalente al del servidor: /menu/eventos → menu, /ordenes/:id/eventos → orden:id, etc.
+    const m = ruta.match(/^\/(?:ordenes\/([^/]+)|(menu|cocina|personal))\/eventos$/);
+    const canal = m?.[1] ? `orden:${m[1]}` : (m?.[2] ?? ruta);
+    const fin = suscribirDemo(canal, alEvento);
+    setTimeout(() => opciones.alConectar?.(true), 0);
+    return () => {
+      clearTimeout(inicio);
+      clearInterval(respaldo);
+      fin();
+    };
+  }
   const ES = (globalThis as { EventSource?: typeof EventSource }).EventSource;
   if (!ES) {
     opciones.alConectar?.(true);

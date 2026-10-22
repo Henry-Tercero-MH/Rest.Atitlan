@@ -9,6 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Tejido } from '@/components/decor';
 import { AnchoMax, Espacio, Estados, Fuentes, Radio, Tinte, type EstadoOrden } from '@/constants/theme';
 import { urlImagen } from '@/lib/api';
+import { FOTOS_INCLUIDAS } from '@/lib/fotos';
 import { usePref } from '@/lib/preferencias';
 
 export function Pantalla({ children, fondo, scroll = true, pie }: {
@@ -213,7 +214,9 @@ const TINTAS_FOTO = [Tinte.anil, '#9A5512', Tinte.aguacateOscuro, Tinte.cochinil
 export function FotoPlatillo({ path, nombre, seccion, alto = 96, ancho = 96, radio = 6 }: {
   path: string | null; nombre: string; seccion?: string; alto?: number; ancho?: number | '100%'; radio?: number;
 }) {
+  // Primero la foto incluida en la app (carga sin red); si no está, se pide por URL.
   const url = urlImagen(path);
+  const fuente = (path ? FOTOS_INCLUIDAS[path] : undefined) ?? (url ? { uri: url } : null);
   const [fallo, setFallo] = useState(false);
   const i = nombre.length % FONDOS_FOTO.length;
   return (
@@ -222,9 +225,9 @@ export function FotoPlatillo({ path, nombre, seccion, alto = 96, ancho = 96, rad
         <IconoSeccion nombre={seccion} size={Math.min(alto * 0.42, 64)} color={TINTAS_FOTO[i]} strokeWidth={1.5} />
       </View>
       <Tejido alto={10} opacidad={0.8} />
-      {url && !fallo ? (
+      {fuente && !fallo ? (
         // Image de React Native: en web es un <img> normal (expo-image dejaba vacías las fotos remotas).
-        <Image source={{ uri: url }} onError={() => setFallo(true)} resizeMode="cover" accessibilityLabel={nombre}
+        <Image source={fuente} onError={() => setFallo(true)} resizeMode="cover" accessibilityLabel={nombre}
           style={{ position: 'absolute', top: 0, right: 0, bottom: 0, left: 0 }} />
       ) : null}
     </View>

@@ -1,0 +1,1278 @@
+{
+ "secciones": [
+  {
+   "id": 1,
+   "nombre": "Desayunos",
+   "nombre_en": "Breakfast",
+   "productos": [
+    {
+     "id": 1,
+     "seccion_id": 1,
+     "nombre": "Chilaquiles",
+     "nombre_en": "Chilaquiles",
+     "descripcion": "Totopos bañados en salsa verde con crema, queso fresco, cebolla y aguacate.",
+     "descripcion_en": "Tortilla chips in green salsa with cream, fresh cheese, onion and avocado.",
+     "precio_centavos": 5500,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 1,
+       "producto_id": 1,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 1,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 2,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 2,
+       "producto_id": 1,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 3,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 4,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 5,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 2,
+     "seccion_id": 1,
+     "nombre": "Desayuno chapín",
+     "nombre_en": "Guatemalan breakfast",
+     "descripcion": "Huevos al gusto, frijoles volteados, plátano frito, crema y tortillas.",
+     "descripcion_en": "Eggs your way, refried beans, fried plantain, cream and tortillas.",
+     "precio_centavos": 5500,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": true,
+     "grupos": [
+      {
+       "id": 3,
+       "producto_id": 2,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 6,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 7,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 4,
+       "producto_id": 2,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 8,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 9,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 10,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 3,
+     "seccion_id": 1,
+     "nombre": "Panqueques con miel local",
+     "nombre_en": "Pancakes with local honey",
+     "descripcion": "Tres panqueques esponjosos con miel de San Juan y fruta.",
+     "descripcion_en": "Three fluffy pancakes with San Juan honey and fruit.",
+     "precio_centavos": 5000,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 5,
+       "producto_id": 3,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 11,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 12,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 6,
+       "producto_id": 3,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 13,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 14,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 15,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 4,
+     "seccion_id": 1,
+     "nombre": "Huevos rancheros",
+     "nombre_en": "Huevos rancheros",
+     "descripcion": "Huevos estrellados sobre tortilla con salsa de tomate y chile.",
+     "descripcion_en": "Fried eggs on tortilla with tomato and chili sauce.",
+     "precio_centavos": 5500,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": true,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 7,
+       "producto_id": 4,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 16,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 17,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 8,
+       "producto_id": 4,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 18,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 19,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 20,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 5,
+     "seccion_id": 1,
+     "nombre": "Omelette del huerto",
+     "nombre_en": "Garden omelette",
+     "descripcion": "Omelette con vegetales frescos, queso y pan tostado.",
+     "descripcion_en": "Omelette with fresh vegetables, cheese and toast.",
+     "precio_centavos": 6000,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 9,
+       "producto_id": 5,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 21,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 22,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 10,
+       "producto_id": 5,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 23,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 24,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 25,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "nombre": "Platos típicos",
+   "nombre_en": "Traditional dishes",
+   "productos": [
+    {
+     "id": 6,
+     "seccion_id": 2,
+     "nombre": "Carne asada",
+     "nombre_en": "Grilled steak",
+     "descripcion": "Corte de res a la parrilla con chirmol, guacamol, frijoles y tortillas.",
+     "descripcion_en": "Grilled beef with chirmol salsa, guacamole, beans and tortillas.",
+     "precio_centavos": 12500,
+     "imagen_path": "carne-asada.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 11,
+       "producto_id": 6,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 26,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 27,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 12,
+       "producto_id": 6,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 28,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 29,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 30,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 7,
+     "seccion_id": 2,
+     "nombre": "Pepián de pollo",
+     "nombre_en": "Chicken pepián",
+     "descripcion": "Recado de semillas tostadas y chiles, con arroz y tamalito.",
+     "descripcion_en": "Toasted seed and chili stew, with rice and tamalito.",
+     "precio_centavos": 9500,
+     "imagen_path": "tacos-al-pastor.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": true,
+     "grupos": [
+      {
+       "id": 13,
+       "producto_id": 7,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 31,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 32,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 14,
+       "producto_id": 7,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 33,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 34,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 35,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 8,
+     "seccion_id": 2,
+     "nombre": "Jocón",
+     "nombre_en": "Jocón",
+     "descripcion": "Pollo en salsa verde de miltomate y cilantro.",
+     "descripcion_en": "Chicken in green tomatillo and cilantro sauce.",
+     "precio_centavos": 9000,
+     "imagen_path": "carne-asada.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": true,
+     "grupos": [
+      {
+       "id": 15,
+       "producto_id": 8,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 36,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 37,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 16,
+       "producto_id": 8,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 38,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 39,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 40,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 9,
+     "seccion_id": 2,
+     "nombre": "Tamalitos de chipilín",
+     "nombre_en": "Chipilín tamales",
+     "descripcion": "Tamalitos de masa con hojas de chipilín y salsa de tomate.",
+     "descripcion_en": "Corn tamales with chipilín leaves and tomato sauce.",
+     "precio_centavos": 4000,
+     "imagen_path": "tacos-al-pastor.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": true,
+     "grupos": [
+      {
+       "id": 17,
+       "producto_id": 9,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 41,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 42,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 18,
+       "producto_id": 9,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 43,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 44,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 45,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 10,
+     "seccion_id": 2,
+     "nombre": "Hilachas",
+     "nombre_en": "Hilachas",
+     "descripcion": "Carne de res deshilachada en salsa de tomate y guaque.",
+     "descripcion_en": "Shredded beef in tomato and guajillo sauce.",
+     "precio_centavos": 8500,
+     "imagen_path": "carne-asada.webp",
+     "vegetariano": false,
+     "picante": true,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 19,
+       "producto_id": 10,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 46,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 47,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 20,
+       "producto_id": 10,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 48,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 49,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 50,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "nombre": "Del lago",
+   "nombre_en": "From the lake",
+   "productos": [
+    {
+     "id": 11,
+     "seccion_id": 3,
+     "nombre": "Mojarra frita del lago",
+     "nombre_en": "Fried lake mojarra",
+     "descripcion": "Mojarra entera dorada, con ensalada, arroz y tortillas.",
+     "descripcion_en": "Whole golden-fried mojarra with salad, rice and tortillas.",
+     "precio_centavos": 11000,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": true,
+     "grupos": [
+      {
+       "id": 21,
+       "producto_id": 11,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 51,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 52,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 22,
+       "producto_id": 11,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 53,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 54,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 55,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 12,
+     "seccion_id": 3,
+     "nombre": "Ceviche de camarón",
+     "nombre_en": "Shrimp ceviche",
+     "descripcion": "Camarón curtido en limón con tomate, cebolla y chile.",
+     "descripcion_en": "Lime-cured shrimp with tomato, onion and chili.",
+     "precio_centavos": 10500,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": false,
+     "picante": true,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 23,
+       "producto_id": 12,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 56,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 57,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 24,
+       "producto_id": 12,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 58,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 59,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 60,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 13,
+     "seccion_id": 3,
+     "nombre": "Filete de pescado al ajillo",
+     "nombre_en": "Garlic fish fillet",
+     "descripcion": "Filete a la plancha con mantequilla de ajo y vegetales.",
+     "descripcion_en": "Grilled fillet with garlic butter and vegetables.",
+     "precio_centavos": 12000,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 25,
+       "producto_id": 13,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 61,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 62,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 26,
+       "producto_id": 13,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 63,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 64,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 65,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 14,
+     "seccion_id": 3,
+     "nombre": "Camarones empanizados",
+     "nombre_en": "Breaded shrimp",
+     "descripcion": "Camarones dorados y crujientes, con salsa de la casa y limón.",
+     "descripcion_en": "Crispy golden shrimp with house sauce and lime.",
+     "precio_centavos": 11500,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": false,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 27,
+       "producto_id": 14,
+       "nombre": "Acompañamiento",
+       "nombre_en": "Side",
+       "min_sel": 1,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 66,
+         "nombre": "Tortillas",
+         "nombre_en": "Tortillas",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 67,
+         "nombre": "Pan francés",
+         "nombre_en": "French bread",
+         "precio_extra_centavos": 0
+        }
+       ]
+      },
+      {
+       "id": 28,
+       "producto_id": 14,
+       "nombre": "Opciones",
+       "nombre_en": "Options",
+       "min_sel": 0,
+       "max_sel": 3,
+       "opciones": [
+        {
+         "id": 68,
+         "nombre": "Sin cebolla",
+         "nombre_en": "No onion",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 69,
+         "nombre": "Salsa aparte",
+         "nombre_en": "Sauce on the side",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 70,
+         "nombre": "Extra aguacate",
+         "nombre_en": "Extra avocado",
+         "precio_extra_centavos": 1000
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "nombre": "Para compartir",
+   "nombre_en": "To share",
+   "productos": [
+    {
+     "id": 15,
+     "seccion_id": 4,
+     "nombre": "Tacos al pastor",
+     "nombre_en": "Tacos al pastor",
+     "descripcion": "Orden de cuatro tacos de cerdo adobado con piña, cebolla y cilantro.",
+     "descripcion_en": "Four marinated pork tacos with pineapple, onion and cilantro.",
+     "precio_centavos": 6000,
+     "imagen_path": "tacos-al-pastor.webp",
+     "vegetariano": false,
+     "picante": true,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    },
+    {
+     "id": 16,
+     "seccion_id": 4,
+     "nombre": "Papas fritas",
+     "nombre_en": "French fries",
+     "descripcion": "Papas cortadas a mano, doradas y con sal de mar.",
+     "descripcion_en": "Hand-cut fries, golden and sprinkled with sea salt.",
+     "precio_centavos": 3000,
+     "imagen_path": "papas-fritas.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "nombre": "Vegetariano",
+   "nombre_en": "Vegetarian",
+   "productos": [
+    {
+     "id": 17,
+     "seccion_id": 5,
+     "nombre": "Ensalada de la casa",
+     "nombre_en": "House salad",
+     "descripcion": "Nuestro platillo especial: elote, chile, cebolla morada y cilantro, con guacamol.",
+     "descripcion_en": "Our signature dish: sweet corn, chili, red onion and cilantro, with guacamole.",
+     "precio_centavos": 6500,
+     "imagen_path": "ensalada-de-la-casa.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": false,
+     "grupos": []
+    },
+    {
+     "id": 18,
+     "seccion_id": 5,
+     "nombre": "Pepián de vegetales",
+     "nombre_en": "Vegetable pepián",
+     "descripcion": "Güisquil, papa y ejote en recado de pepián, con arroz.",
+     "descripcion_en": "Chayote, potato and green beans in pepián sauce, with rice.",
+     "precio_centavos": 8000,
+     "imagen_path": "ensalada-de-la-casa.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": true,
+     "grupos": []
+    },
+    {
+     "id": 19,
+     "seccion_id": 5,
+     "nombre": "Ensalada del huerto",
+     "nombre_en": "Garden salad",
+     "descripcion": "Hojas verdes, aguacate, tomate y semillas con vinagreta de miel.",
+     "descripcion_en": "Greens, avocado, tomato and seeds with honey vinaigrette.",
+     "precio_centavos": 5500,
+     "imagen_path": "ensalada-de-la-casa.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    },
+    {
+     "id": 20,
+     "seccion_id": 5,
+     "nombre": "Tacos de hongos",
+     "nombre_en": "Mushroom tacos",
+     "descripcion": "Hongos salteados con cebolla y chile, en tortilla de maíz.",
+     "descripcion_en": "Sautéed mushrooms with onion and chili on corn tortillas.",
+     "precio_centavos": 6500,
+     "imagen_path": "ensalada-de-la-casa.webp",
+     "vegetariano": true,
+     "picante": true,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "nombre": "Bebidas",
+   "nombre_en": "Drinks",
+   "productos": [
+    {
+     "id": 21,
+     "seccion_id": 6,
+     "nombre": "Limonada con chía",
+     "nombre_en": "Chia lemonade",
+     "descripcion": "Limonada natural con semillas de chía.",
+     "descripcion_en": "Fresh lemonade with chia seeds.",
+     "precio_centavos": 2000,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    },
+    {
+     "id": 22,
+     "seccion_id": 6,
+     "nombre": "Rosa de Jamaica",
+     "nombre_en": "Hibiscus water",
+     "descripcion": "Agua fresca de flor de Jamaica.",
+     "descripcion_en": "Chilled hibiscus flower drink.",
+     "precio_centavos": 1800,
+     "imagen_path": "carne-asada.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    },
+    {
+     "id": 23,
+     "seccion_id": 6,
+     "nombre": "Licuado de frutas",
+     "nombre_en": "Fruit smoothie",
+     "descripcion": "Fruta de temporada con leche o agua.",
+     "descripcion_en": "Seasonal fruit with milk or water.",
+     "precio_centavos": 2500,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "nombre": "Café de San Juan",
+   "nombre_en": "San Juan coffee",
+   "productos": [
+    {
+     "id": 24,
+     "seccion_id": 7,
+     "nombre": "Café de altura de San Juan",
+     "nombre_en": "San Juan highland coffee",
+     "descripcion": "Café de la cooperativa local, tostado y molido aquí.",
+     "descripcion_en": "Local cooperative coffee, roasted and ground here.",
+     "precio_centavos": 2000,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": true,
+     "sabor_local": true,
+     "grupos": [
+      {
+       "id": 29,
+       "producto_id": 24,
+       "nombre": "Leche",
+       "nombre_en": "Milk",
+       "min_sel": 0,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 71,
+         "nombre": "Leche entera",
+         "nombre_en": "Whole milk",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 72,
+         "nombre": "Leche de avena",
+         "nombre_en": "Oat milk",
+         "precio_extra_centavos": 500
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 25,
+     "seccion_id": 7,
+     "nombre": "Capuchino",
+     "nombre_en": "Cappuccino",
+     "descripcion": "Espresso con leche espumada.",
+     "descripcion_en": "Espresso with steamed milk foam.",
+     "precio_centavos": 2500,
+     "imagen_path": "carne-asada.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 30,
+       "producto_id": 25,
+       "nombre": "Leche",
+       "nombre_en": "Milk",
+       "min_sel": 0,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 73,
+         "nombre": "Leche entera",
+         "nombre_en": "Whole milk",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 74,
+         "nombre": "Leche de avena",
+         "nombre_en": "Oat milk",
+         "precio_extra_centavos": 500
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "id": 26,
+     "seccion_id": 7,
+     "nombre": "Café de olla",
+     "nombre_en": "Café de olla",
+     "descripcion": "Café con canela y panela, servido en jarrito de barro.",
+     "descripcion_en": "Coffee with cinnamon and raw sugar, served in a clay cup.",
+     "precio_centavos": 2000,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": [
+      {
+       "id": 31,
+       "producto_id": 26,
+       "nombre": "Leche",
+       "nombre_en": "Milk",
+       "min_sel": 0,
+       "max_sel": 1,
+       "opciones": [
+        {
+         "id": 75,
+         "nombre": "Leche entera",
+         "nombre_en": "Whole milk",
+         "precio_extra_centavos": 0
+        },
+        {
+         "id": 76,
+         "nombre": "Leche de avena",
+         "nombre_en": "Oat milk",
+         "precio_extra_centavos": 500
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "nombre": "Postres",
+   "nombre_en": "Desserts",
+   "productos": [
+    {
+     "id": 27,
+     "seccion_id": 8,
+     "nombre": "Plátanos en mole",
+     "nombre_en": "Plantains in mole",
+     "descripcion": "Plátano maduro en mole dulce de chocolate y semillas.",
+     "descripcion_en": "Ripe plantain in sweet chocolate and seed mole.",
+     "precio_centavos": 3500,
+     "imagen_path": "chilaquiles.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": true,
+     "grupos": []
+    },
+    {
+     "id": 28,
+     "seccion_id": 8,
+     "nombre": "Rellenitos de plátano",
+     "nombre_en": "Plantain rellenitos",
+     "descripcion": "Masa de plátano rellena de frijol dulce y chocolate.",
+     "descripcion_en": "Plantain dough filled with sweet beans and chocolate.",
+     "precio_centavos": 3000,
+     "imagen_path": "carne-asada.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": false,
+     "grupos": []
+    },
+    {
+     "id": 29,
+     "seccion_id": 8,
+     "nombre": "Miel local con queso fresco",
+     "nombre_en": "Local honey with fresh cheese",
+     "descripcion": "Miel de abejas de San Juan con queso fresco y pan.",
+     "descripcion_en": "San Juan bee honey with fresh cheese and bread.",
+     "precio_centavos": 3500,
+     "imagen_path": "camarones-empanizados.webp",
+     "vegetariano": true,
+     "picante": false,
+     "recomendado": false,
+     "sabor_local": true,
+     "grupos": []
+    }
+   ]
+  }
+ ]
+}
