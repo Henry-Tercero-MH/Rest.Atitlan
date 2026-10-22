@@ -1,0 +1,31 @@
+# Dependencias
+node_modules/
+
+# Builds y caché de Expo
+dist/
+web-build/
+.expo/
+expo-env.d.ts
+*.tsbuildinfo
+.metro-health-check*
+
+# Variables de entorno (solo se suben los .env.example)
+.env
+.env.*
+!.env.example
+
+# Nativo generado por Expo (CNG)
+ios/
+android/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+npm-debug.*
+yarn-error.*

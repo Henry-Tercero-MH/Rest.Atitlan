@@ -1,0 +1,24 @@
+{
+  "name": "menu-qr-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DEMO - API del menú QR de Rest. Atitlán (Etapa 1: toma de pedidos)",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "migrate": "node src/migrate.js",
+    "smoke": "node test/smoke.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "0.2.17",
+    "cors": "2.8.5",
+    "express": "4.21.2",
+    "jsonwebtoken": "9.0.2",
+    "pg": "8.13.1"
+  }
+}
