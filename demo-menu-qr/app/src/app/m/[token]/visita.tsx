@@ -1,11 +1,13 @@
-// Órdenes de esta visita, total acumulado y llamar al mesero / pedir la cuenta.
+// Mi visita: órdenes de la mesa como lista tipo cuenta, consumo acumulado y acciones.
 import { router, useLocalSearchParams } from 'expo-router';
-import { BellRing, ChevronLeft, ReceiptText } from 'lucide-react-native';
+import { BellRing, ChevronRight, ReceiptText } from 'lucide-react-native';
 import { useEffect, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { Aviso, Boton, Cargando, EstadoBadge, Pantalla, Tarjeta, Texto, Titulo } from '@/components/ui';
-import { Espacio, Fuentes } from '@/constants/theme';
+import { Antetitulo, Contenedor, Linea, TituloCarta, Volver } from '@/components/carta';
+import { Aviso, Boton, Cargando } from '@/components/ui';
+import { Espacio, Estados, Fuentes } from '@/constants/theme';
 import { api, horaGt, quetzales, type Orden } from '@/lib/api';
 import { usePref } from '@/lib/preferencias';
 
@@ -13,7 +15,7 @@ type Visita = { ordenes: Orden[]; total_centavos: number };
 
 export default function MiVisita() {
   const { token } = useLocalSearchParams<{ token: string }>();
-  const { c, t } = usePref();
+  const { c, t, idioma } = usePref();
   const [datos, setDatos] = useState<Visita | null>(null);
   const [aviso, setAviso] = useState<{ tipo: 'exito' | 'error'; texto: string } | null>(null);
 
@@ -37,47 +39,66 @@ export default function MiVisita() {
   };
 
   return (
-    <Pantalla>
-      <Pressable onPress={() => (router.canGoBack() ? router.back() : router.replace(`/m/${token}`))} hitSlop={10}
-        style={{ flexDirection: 'row', alignItems: 'center', gap: 2, paddingTop: Espacio.l, minHeight: 44 }}>
-        <ChevronLeft size={20} color={c.enlace} />
-        <Text style={{ fontSize: 16, color: c.enlace, fontFamily: Fuentes.fuerte }}>{t('menu')}</Text>
-      </Pressable>
-      <Titulo>{t('miVisita')}</Titulo>
+    <SafeAreaView style={{ flex: 1, backgroundColor: c.fondo }} edges={['top', 'bottom']}>
+      <ScrollView contentContainerStyle={{ paddingBottom: Espacio.xxl }}>
+        <Contenedor style={{ paddingTop: Espacio.s }}>
+          <Volver texto={t('menu')} a={`/m/${token}`} />
+          <View style={{ marginTop: Espacio.l, gap: 6 }}>
+            <Antetitulo>{t('misOrdenes')}</Antetitulo>
+            <TituloCarta>{t('miVisita')}</TituloCarta>
+          </View>
 
-      <View style={{ flexDirection: 'row', gap: Espacio.s }}>
-        <Boton titulo={t('llamarMesero')} Icono={BellRing} variante="secundario" style={{ flex: 1 }} onPress={() => pedir('mesero')} />
-        <Boton titulo={t('pedirCuenta')} Icono={ReceiptText} variante="secundario" style={{ flex: 1 }} onPress={() => pedir('cuenta')} />
-      </View>
-      {aviso ? <Aviso tipo={aviso.tipo}>{aviso.texto}</Aviso> : null}
+          <View style={{ flexDirection: 'row', gap: Espacio.s, marginTop: Espacio.xl }}>
+            <Boton titulo={t('llamarMesero')} Icono={BellRing} variante="secundario" style={{ flex: 1, borderRadius: 10 }} onPress={() => pedir('mesero')} />
+            <Boton titulo={t('pedirCuenta')} Icono={ReceiptText} variante="secundario" style={{ flex: 1, borderRadius: 10 }} onPress={() => pedir('cuenta')} />
+          </View>
+          {aviso ? <View style={{ marginTop: Espacio.m }}><Aviso tipo={aviso.tipo}>{aviso.texto}</Aviso></View> : null}
 
-      {!datos ? <Cargando /> : datos.ordenes.length === 0 ? (
-        <Texto secundario>{t('sinOrdenes')}</Texto>
-      ) : (
-        <>
-          {datos.ordenes.map((o) => (
-            <Pressable key={o.id} accessibilityRole="link"
-              onPress={() => router.push({ pathname: '/m/[token]/orden/[id]', params: { token, id: o.id } })}>
-                <Tarjeta>
-                  <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <Text style={{ fontSize: 20, fontFamily: Fuentes.tituloFuerte, color: c.precio }}>{o.numero_visible}</Text>
-                    <Texto secundario>{horaGt(o.creada_en)}</Texto>
-                  </View>
-                  <EstadoBadge estado={o.estado} />
-                  <Texto secundario>{o.lineas.map((l) => `${l.cantidad}× ${l.nombre}`).join(' · ')}</Texto>
-                  <Text style={{ fontFamily: Fuentes.fuerte, color: c.texto, fontSize: 16 }}>{quetzales(o.total_centavos)}</Text>
-                </Tarjeta>
-            </Pressable>
-          ))}
-          <Tarjeta style={{ backgroundColor: c.superficieAlt }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
-              <Text style={{ fontSize: 16, fontFamily: Fuentes.fuerte, color: c.texto }}>{t('consumoAcumulado')}</Text>
-              <Text style={{ fontSize: 22, fontFamily: Fuentes.fuerte, color: c.precio }}>{quetzales(datos.total_centavos)}</Text>
+          {!datos ? <Cargando /> : datos.ordenes.length === 0 ? (
+            <Text style={[s.secundario, { color: c.textoSecundario, marginTop: Espacio.xl }]}>{t('sinOrdenes')}</Text>
+          ) : (
+            <View style={{ marginTop: Espacio.xl }}>
+              <Linea fuerte />
+              {datos.ordenes.map((o, i) => {
+                const e = Estados[o.estado];
+                return (
+                  <Pressable key={o.id} accessibilityRole="link" accessibilityLabel={`${o.numero_visible}, ${t('verDetalle')}`}
+                    onPress={() => router.push({ pathname: '/m/[token]/orden/[id]', params: { token, id: o.id } })}
+                    style={({ pressed }) => [s.fila, i > 0 && { borderTopWidth: StyleSheet.hairlineWidth, borderTopColor: c.borde }, pressed && { backgroundColor: c.superficieAlt }]}>
+                    <View style={{ flex: 1, gap: 4 }}>
+                      <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: Espacio.s }}>
+                        <Text style={{ fontFamily: Fuentes.tituloFuerte, fontSize: 20, color: c.texto }}>{o.numero_visible}</Text>
+                        <Text style={[s.secundario, { color: c.textoSecundario }]}>{horaGt(o.creada_en)}</Text>
+                      </View>
+                      <Text style={[s.secundario, { color: c.textoSecundario }]} numberOfLines={2}>
+                        {o.lineas.map((l) => `${l.cantidad} × ${l.nombre}`).join(' · ')}
+                      </Text>
+                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5 }}>
+                        <e.Icono size={14} color={c.texto} strokeWidth={1.75} />
+                        <Text style={{ fontFamily: Fuentes.medio, fontSize: 14, color: c.texto }}>{idioma === 'en' ? e.etiquetaEn : e.etiqueta}</Text>
+                      </View>
+                    </View>
+                    <Text style={{ fontFamily: Fuentes.fuerte, fontSize: 16, color: c.texto, fontVariant: ['tabular-nums'] }}>{quetzales(o.total_centavos)}</Text>
+                    <ChevronRight size={18} color={c.textoSecundario} strokeWidth={1.75} />
+                  </Pressable>
+                );
+              })}
+              <Linea fuerte />
+              <View style={s.total}>
+                <Text style={{ fontFamily: Fuentes.titulo, fontSize: 22, color: c.texto }}>{t('consumoAcumulado')}</Text>
+                <Text style={{ fontFamily: Fuentes.fuerte, fontSize: 24, color: c.precio, fontVariant: ['tabular-nums'] }}>{quetzales(datos.total_centavos)}</Text>
+              </View>
+              <Text style={[s.secundario, { color: c.textoSecundario }]}>{t('cobroCaja')}</Text>
             </View>
-            <Texto secundario style={{ fontSize: 14 }}>{t('cobroCaja')}</Texto>
-          </Tarjeta>
-        </>
-      )}
-    </Pantalla>
+          )}
+        </Contenedor>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
+
+const s = StyleSheet.create({
+  fila: { flexDirection: 'row', alignItems: 'center', gap: Espacio.m, paddingVertical: 16 },
+  secundario: { fontFamily: Fuentes.cuerpo, fontSize: 14, lineHeight: 20 },
+  total: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'baseline', paddingTop: Espacio.l, paddingBottom: Espacio.s },
+});

@@ -19,7 +19,8 @@ const SIGUIENTE: Partial<Record<EstadoOrden, { estado: EstadoOrden; texto: strin
 const UMBRAL_MIN = 15; // minutos antes de marcar la orden como demorada (configurable en producción)
 
 function minutos(iso: string, ahora: number) {
-  return Math.floor((ahora - new Date(iso).getTime()) / 60000);
+  // El reloj de pantalla se actualiza cada 30 s: una orden recién llegada podría dar negativo.
+  return Math.max(0, Math.floor((ahora - new Date(iso).getTime()) / 60000));
 }
 
 function campana() {
@@ -112,7 +113,7 @@ export default function Cocina() {
       <View style={s.barra}>
         <ChefHat size={24} color={Paleta.ambar} />
         <Text style={s.marca}>COCINA</Text>
-        <Text style={s.contador}>{ordenes?.length ?? 0} activas</Text>
+        <Text style={s.contador}>{ordenes?.length ?? 0} {ordenes?.length === 1 ? 'activa' : 'activas'}</Text>
         <View style={[s.conexion, { backgroundColor: conectado ? Paleta.verde : Paleta.rojo }]}>
           {conectado ? <Wifi size={16} color={Paleta.blanco} /> : <WifiOff size={16} color={Paleta.blanco} />}
           <Text style={{ color: Paleta.blanco, fontWeight: '800' }}>{conectado ? 'En línea' : 'Sin conexión — reintentando'}</Text>
@@ -180,7 +181,7 @@ export default function Cocina() {
                       </Pressable>
                     ) : null}
                     {o.estado !== 'listo' ? (
-                      <Pressable onPress={() => setCancelando({ orden: o })} style={[s.accion, { flex: 0, paddingHorizontal: 14, backgroundColor: Colores.kdsBorde }]}>
+                      <Pressable onPress={() => setCancelando({ orden: o })} style={[s.accion, { flex: 0, flexShrink: 0, minWidth: 104, paddingHorizontal: 18, backgroundColor: Colores.kdsBorde }]}>
                         <Text style={[s.accionTexto, { color: Colores.kdsTexto }]}>Cancelar</Text>
                       </Pressable>
                     ) : null}
